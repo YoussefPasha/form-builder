@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import React from "react";
+import React, { useState } from "react";
 import DesignerSidebar from "./designer-sidebar";
 import {
   DragEndEvent,
@@ -9,8 +9,12 @@ import {
   useDraggable,
   useDroppable,
 } from "@dnd-kit/core";
+import { FormElementInstance } from "./form-elements";
+import UserDesigner from "./hooks/use-designer";
 
 const Designer = () => {
+  const { elements, addElement } = UserDesigner();
+
   const droppable = useDroppable({
     id: "designer-drop-area",
     data: {
