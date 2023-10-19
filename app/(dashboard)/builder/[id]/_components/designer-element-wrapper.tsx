@@ -21,7 +21,7 @@ const DesignerElementWrapper = ({
     data: {
       type: element.type,
       elementId: element.id,
-      isTopHalfDesignElement: true,
+      isTopHalfDesignerElement: true,
     },
   });
 
@@ -30,7 +30,7 @@ const DesignerElementWrapper = ({
     data: {
       type: element.type,
       elementId: element.id,
-      isBottomHalfDesignElement: true,
+      isBottomHalfDesignerElement: true,
     },
   });
 
