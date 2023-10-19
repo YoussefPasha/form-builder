@@ -3,12 +3,12 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { MdPreview } from "react-icons/md";
-// import useDesigner from "./hooks/useDesigner";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-// import { FormElements } from "./FormElements";
+import UserDesigner from "./hooks/use-designer";
+import { FormElements } from "./form-elements";
 
 function PreviewDialogBtn() {
-  //   const { elements } = useDesigner();
+  const { elements } = UserDesigner();
 
   return (
     <Dialog>
@@ -27,7 +27,7 @@ function PreviewDialogBtn() {
             This is how your form will look like to your users.
           </p>
         </div>
-        {/* <div className="bg-accent flex flex-col flex-grow items-center justify-center p-4 bg-[url(/paper.svg)] dark:bg-[url(/paper-dark.svg)] overflow-y-auto">
+        <div className="bg-accent flex flex-col flex-grow items-center justify-center p-4 bg-[url(/paper.svg)] dark:bg-[url(/paper-dark.svg)] overflow-y-auto">
           <div className="max-w-[620px] flex flex-col gap-4 flex-grow bg-background h-full w-full rounded-2xl p-8 overflow-y-auto">
             {elements.map((element) => {
               const FormComponent = FormElements[element.type].formComponent;
@@ -36,7 +36,7 @@ function PreviewDialogBtn() {
               );
             })}
           </div>
-        </div> */}
+        </div>
       </DialogContent>
     </Dialog>
   );
