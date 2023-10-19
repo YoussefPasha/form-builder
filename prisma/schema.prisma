@@ -18,7 +18,7 @@ model Form {
   published   Boolean  @default(false)
   name        String
   description String   @default("")
-  contnet     String   @default("[]")
+  content     String   @default("[]")
 
   visits      Int @default(0)
   submissions Int @default(0)

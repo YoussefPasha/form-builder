@@ -3,19 +3,19 @@
 import React, { useTransition } from "react";
 import { Button } from "@/components/ui/button";
 import { HiSaveAs } from "react-icons/hi";
-// import useDesigner from "./hooks/useDesigner";
-// import { UpdateFormContent } from "@/actions/form";
 import { toast } from "@/components/ui/use-toast";
 import { FaSpinner } from "react-icons/fa";
+import UserDesigner from "./hooks/use-designer";
+import { UpdateFormContent } from "@/actions/form";
 
 function SaveFormBtn({ id }: { id: number }) {
-  //   const { elements } = useDesigner();
+  const { elements } = UserDesigner();
   const [loading, startTransition] = useTransition();
 
   const updateFormContent = async () => {
     try {
-      //   const jsonElements = JSON.stringify(elements);
-      //   await UpdateFormContent(id, jsonElements);
+      const jsonElements = JSON.stringify(elements);
+      await UpdateFormContent(id, jsonElements);
       toast({
         title: "Success",
         description: "Your form has been saved",
