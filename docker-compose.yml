@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  db:
+    image: postgres:14.1-alpine
+    ports:
+      - 5433:5432
+    container_name: form-builder
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: formbuilder
+      POSTGRES_HOST_AUTH_METHOD: trust
+    volumes:
+      - postgres_data_container:/var/lib/postgresql/data
+volumes:
+  postgres_data_container:
+    driver: local

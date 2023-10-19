@@ -112,3 +112,5 @@ export async function UpdateFormContent(id: number, jsonContent: string) {
     },
   });
 }
+
+export async function PublishForm(id: number) {}

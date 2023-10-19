@@ -1,6 +1,5 @@
 "use client";
 
-// import { PublishForm } from "@/actions/form";
 import { useRouter } from "next/navigation";
 import { useTransition } from "react";
 import { FaSpinner } from "react-icons/fa";
@@ -18,6 +17,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/components/ui/use-toast";
+import { PublishForm } from "@/actions/form";
 
 function PublishFormBtn({ id }: { id: number }) {
   const [loading, startTransition] = useTransition();
@@ -25,7 +25,7 @@ function PublishFormBtn({ id }: { id: number }) {
 
   async function publishForm() {
     try {
-      //   await PublishForm(id);
+      await PublishForm(id);
       toast({
         title: "Success",
         description: "Your form is now available to the public",
