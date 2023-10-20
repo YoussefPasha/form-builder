@@ -6,7 +6,14 @@ import { LuView } from "react-icons/lu";
 import { FaWpforms } from "react-icons/fa";
 import { HiCursorClick } from "react-icons/hi";
 import { TbArrowBounce } from "react-icons/tb";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { format, formatDistance } from "date-fns";
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -118,11 +125,11 @@ async function SubmissionsTable({ id }: { id: number }) {
   formElements.forEach((element) => {
     switch (element.type) {
       case "TextField":
-      // case "NumberField":
-      // case "TextAreaField":
-      // case "DateField":
-      // case "SelectField":
-      // case "CheckboxField":
+        // case "NumberField":
+        // case "TextAreaField":
+        // case "DateField":
+        // case "SelectField":
+        // case "CheckboxField":
         columns.push({
           id: element.id,
           label: element.extraAttributes?.label,
@@ -135,14 +142,14 @@ async function SubmissionsTable({ id }: { id: number }) {
     }
   });
 
-  // const rows: Row[] = [];
-  // form.FormSubmissions.forEach((submission) => {
-  //   const content = JSON.parse(submission.content);
-  //   rows.push({
-  //     ...content,
-  //     submittedAt: submission.createdAt,
-  //   });
-  // });
+  const rows: Row[] = [];
+  form.FormSubmissions.forEach((submission) => {
+    const content = JSON.parse(submission.content);
+    rows.push({
+      ...content,
+      submittedAt: submission.createdAt,
+    });
+  });
 
   return (
     <>
@@ -156,14 +163,20 @@ async function SubmissionsTable({ id }: { id: number }) {
                   {column.label}
                 </TableHead>
               ))}
-              <TableHead className="text-muted-foreground text-right uppercase">Submitted at</TableHead>
+              <TableHead className="text-muted-foreground text-right uppercase">
+                Submitted at
+              </TableHead>
             </TableRow>
           </TableHeader>
-          {/* <TableBody>
+          <TableBody>
             {rows.map((row, index) => (
               <TableRow key={index}>
                 {columns.map((column) => (
-                  <RowCell key={column.id} type={column.type} value={row[column.id]} />
+                  <RowCell
+                    key={column.id}
+                    type={column.type}
+                    value={row[column.id]}
+                  />
                 ))}
                 <TableCell className="text-muted-foreground text-right">
                   {formatDistance(row.submittedAt, new Date(), {
@@ -172,27 +185,27 @@ async function SubmissionsTable({ id }: { id: number }) {
                 </TableCell>
               </TableRow>
             ))}
-          </TableBody> */}
+          </TableBody>
         </Table>
       </div>
     </>
   );
 }
 
-// function RowCell({ type, value }: { type: ElementsType; value: string }) {
-//   let node: ReactNode = value;
+function RowCell({ type, value }: { type: ElementsType; value: string }) {
+  let node: ReactNode = value;
 
-//   switch (type) {
-//     case "DateField":
-//       if (!value) break;
-//       const date = new Date(value);
-//       node = <Badge variant={"outline"}>{format(date, "dd/MM/yyyy")}</Badge>;
-//       break;
-//     case "CheckboxField":
-//       const checked = value === "true";
-//       node = <Checkbox checked={checked} disabled />;
-//       break;
-//   }
+  // switch (type) {
+  //   case "DateField":
+  //     if (!value) break;
+  //     const date = new Date(value);
+  //     node = <Badge variant={"outline"}>{format(date, "dd/MM/yyyy")}</Badge>;
+  //     break;
+  //   case "CheckboxField":
+  //     const checked = value === "true";
+  //     node = <Checkbox checked={checked} disabled />;
+  //     break;
+  // }
 
-//   return <TableCell>{node}</TableCell>;
-// }
+  return <TableCell>{node}</TableCell>;
+}
