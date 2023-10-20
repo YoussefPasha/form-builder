@@ -1,6 +1,6 @@
 ## Getting Started
 
-First, run the development server:
+First, go to clerk to create secrets:
 
 .env
 ```
@@ -15,6 +15,9 @@ NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
 DATABASE_URL="postgres://postgres:postgres@localhost:5433/formbuilder"
 
 ```
+
+Second, bash:
+
 
 ```bash
 npm install
