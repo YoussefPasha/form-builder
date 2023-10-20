@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useContext } from "react";
-import { DesignerContext } from "../context/designer-context";
+import { DesignerContext } from "@/context/designer-context";
 
 const UserDesigner = () => {
   const context = useContext(DesignerContext);

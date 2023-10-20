@@ -1,5 +1,5 @@
 import React from "react";
-import { FormElements } from "./form-elements";
+import { FormElements } from "@/components/form-elements";
 import SidebarBtnElement from "./sidebar-btn-elements";
 import UserDesigner from "./hooks/use-designer";
 import FormElementsSidebar from "./form-elements-sidebar";

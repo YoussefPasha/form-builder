@@ -1,4 +1,4 @@
-import { TextFieldFormElement } from "./fields/text-fields";
+import { TextFieldFormElement } from "../app/(dashboard)/builder/[id]/_components/fields/text-fields";
 
 export type ElementsType = "TextField";
 //   | "TitleField"

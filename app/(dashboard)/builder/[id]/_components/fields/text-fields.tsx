@@ -5,7 +5,7 @@ import {
   ElementsType,
   FormElement,
   FormElementInstance,
-} from "../form-elements";
+} from "@/components/form-elements";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";

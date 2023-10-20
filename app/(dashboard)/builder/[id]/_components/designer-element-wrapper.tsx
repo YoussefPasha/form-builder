@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { FormElementInstance, FormElements } from "./form-elements";
+import { FormElementInstance, FormElements } from "@/components/form-elements";
 import { useDraggable, useDroppable } from "@dnd-kit/core";
 import { BiSolidTrash } from "react-icons/bi";
 import { Button } from "@/components/ui/button";

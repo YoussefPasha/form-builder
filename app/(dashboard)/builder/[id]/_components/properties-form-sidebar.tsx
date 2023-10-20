@@ -1,6 +1,6 @@
 import React from "react";
 import UserDesigner from "./hooks/use-designer";
-import { FormElements } from "./form-elements";
+import { FormElements } from "@/components/form-elements";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { AiOutlineClose } from "react-icons/ai";

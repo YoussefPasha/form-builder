@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import React from "react";
 import DesignerSidebar from "./designer-sidebar";
 import { DragEndEvent, useDndMonitor, useDroppable } from "@dnd-kit/core";
-import { ElementsType, FormElements } from "./form-elements";
+import { ElementsType, FormElements } from "@/components/form-elements";
 import UserDesigner from "./hooks/use-designer";
 import { idGenerator } from "@/lib/id-generator";
 import DesignerElementWrapper from "./designer-element-wrapper";
