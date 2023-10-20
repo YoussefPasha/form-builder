@@ -1,11 +1,17 @@
+import { ParagraphFieldFormElement } from "./fields/paragraph-field";
+import { SeparatorFieldFormElement } from "./fields/separator-field";
+import { SpacerFieldFormElement } from "./fields/spacer-field";
+import { SubTitleFieldFormElement } from "./fields/subtitle-field";
 import { TextFieldFormElement } from "./fields/text-fields";
+import { TitleFieldFormElement } from "./fields/title-field";
 
-export type ElementsType = "TextField";
-//   | "TitleField"
-//   | "SubTitleField"
-//   | "ParagraphField"
-//   | "SeparatorField"
-//   | "SpacerField"
+export type ElementsType =
+  | "TextField"
+  | "TitleField"
+  | "SubTitleField"
+  | "ParagraphField"
+  | "SeparatorField"
+  | "SpacerField";
 //   | "NumberField"
 //   | "TextAreaField"
 //   | "DateField"
@@ -50,4 +56,9 @@ type FormElementsType = {
 
 export const FormElements: FormElementsType = {
   TextField: TextFieldFormElement,
+  TitleField: TitleFieldFormElement,
+  SubTitleField: SubTitleFieldFormElement,
+  ParagraphField: ParagraphFieldFormElement,
+  SeparatorField: SeparatorFieldFormElement,
+  SpacerField: SpacerFieldFormElement,
 };
