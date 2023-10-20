@@ -57,6 +57,8 @@ const FormBuilder = ({ form }: { form: Form }) => {
     );
   }
 
+  const shareUrl = `${window.location.origin}/submit/${form.shareURL}`;
+
   if (form.published) {
     return (
       <>
@@ -76,11 +78,11 @@ const FormBuilder = ({ form }: { form: Form }) => {
               Anyone with the link can view and submit the form
             </h3>
             <div className="my-4 flex flex-col gap-2 items-center w-full border-b pb-4">
-              {/* <Input className="w-full" readOnly value={shareUrl} /> */}
+              <Input className="w-full" readOnly value={shareUrl} />
               <Button
                 className="mt-2 w-full"
                 onClick={() => {
-                  // navigator.clipboard.writeText(shareUrl);
+                  navigator.clipboard.writeText(shareUrl);
                   toast({
                     title: "Copied!",
                     description: "Link copied to clipboard",
