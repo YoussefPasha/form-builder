@@ -1,4 +1,4 @@
-import { TextFieldFormElement } from "../app/(dashboard)/builder/[id]/_components/fields/text-fields";
+import { TextFieldFormElement } from "./fields/text-fields";
 
 export type ElementsType = "TextField";
 //   | "TitleField"
@@ -11,6 +11,7 @@ export type ElementsType = "TextField";
 //   | "DateField"
 //   | "SelectField"
 //   | "CheckboxField";
+export type SubmitFunction = (key: string, value: string) => void;
 
 export type FormElementInstance = {
   id: string;
@@ -32,10 +33,15 @@ export type FormElement = {
   }>;
   formComponent: React.FC<{
     elementInstance: FormElementInstance;
+    submitValue?: SubmitFunction;
+    isInvalid?: boolean;
+    defaultValue?: string;
   }>;
   propertiesComponent: React.FC<{
     elementInstance: FormElementInstance;
   }>;
+
+  validate: (formElement: FormElementInstance, currentValue: string) => boolean;
 };
 
 type FormElementsType = {
